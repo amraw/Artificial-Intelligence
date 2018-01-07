@@ -1,0 +1,9 @@
+remdups([],[]).
+
+remdups([H | T], List) :-
+     member(H, T),
+     remove_duplicates( T, List).
+
+remdups([H | T], [H|T1]) :-
+      \+member(H, T),
+      remove_duplicates( T, T1).

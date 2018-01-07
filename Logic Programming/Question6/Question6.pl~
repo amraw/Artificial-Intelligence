@@ -1,0 +1,4 @@
+sin_zero(X,Y):- calculate_sin_zero(X,Y).
+calculate_sin_zero(X,Y) :- sin(X) < -0.0001, \+(cos(X)=0), Z is sin(X)/cos(X), M is X-Z,calculate_sin_zero(M,Y).
+calculate_sin_zero(X,Y) :- sin(X) > 0.0001, \+(cos(X)=0), Z is sin(X)/cos(X), M is X-Z,calculate_sin_zero(M,Y).
+calculate_sin_zero(X,Y) :-   sin(X)> -0.0001,  sin(X)<0.0001, Y is X.
